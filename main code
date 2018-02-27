@@ -1,0 +1,14 @@
+import csv
+import random
+filename ="enemies.csv"
+lect = open(filename)
+fitxer = csv.reader(lect)
+
+print ("Hello Adventurer, What is your Name?")
+crname = str(input(""))
+print ("%s, right? Not the name I would have chosen." %(crname,))
+print ("Anyway, Lets get started:")
+print ("")
+print ("You awake in the land of Russia, a magical place where dreams come true, and magic and animals roam the land. You are a :")
+print ("")
+print ("Warrior, with 16 ")
