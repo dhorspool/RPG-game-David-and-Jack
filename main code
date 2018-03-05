@@ -72,3 +72,14 @@ print ("Well then, lets begin:")
 print ("")
 
 print ("Upon waking up, you find that ")
+
+
+
+for row in fitxer:
+  enemiename=row[0]
+  enemieattack=row[1]
+  enemidefense=row[2]
+  enemiehp=row[3]
+  print 
+  
+  
