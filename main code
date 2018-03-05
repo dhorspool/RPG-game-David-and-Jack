@@ -3,12 +3,72 @@ import random
 filename ="enemies.csv"
 lect = open(filename)
 fitxer = csv.reader(lect)
+inventory=[]
+badans = True
+understood=True
 
 print ("Hello Adventurer, What is your Name?")
 crname = str(input(""))
 print ("%s, right? Not the name I would have chosen." %(crname,))
+print ("")
+print ("Let me make some things clear Right off the bat:")
+print ("With the exception of You Name, All words and commands amd etc will need to be clear: If you are inputting a number, make it just a number. If you are making an action, make it just one word, all lowercase. Is that clear ? :")
+print ("")
+print ("Options: yes, no")
+
+while understood:
+  ans = str(input(""))
+  if ans == "Yes":
+    print ("Repat, in lowercase")
+  elif ans == "No":
+    print ("Repeat, in lowercase")
+  elif ans == "no":
+    print ("With the exception of You Name, All words and commands amd etc will need to be clear: If you are inputting a number, make it just a number. If you are making an action, make it just one word, all lowercase. Is that clear ? ")
+    print ("")
+    print ("Options: yes, no")
+    
+  elif ans == "yes":
+    print ("Great! Now we can understand each other")
+    understood = False
+  else:
+    print ("Options:")
+    print ("yes")
+    print ("no")
+    
 print ("Anyway, Lets get started:")
 print ("")
 print ("You awake in the land of Russia, a magical place where dreams come true, and magic and animals roam the land. You are a :")
 print ("")
-print ("Warrior, with 16 ")
+warrior = "Warrior, with 2 ATK, 2 DEF, and 16 HP"
+print (warrior)
+""" The only funcional class for now os the warrior, lets get 1 class wprking before we add the rest
+print ("Mage, 4 ATK, 0 DEF, and 12 HP")
+print ("Rouge, 3 ATK, 1 DEF, and 14 HP")
+class = str(input("So, What are you?"))
+"""
+crclass = ("")
+while not crclass == "warrior" or not crclass == "mage" or not crclass == "rouge":
+  print ("Please choose a correct class name")
+  print ("")
+  print (warrior)
+  crclass = str(input("So, What are you?"))
+  if crclass == "warrior" or crclass=="mage" or crclass == "rouge":
+    print ("Great!")
+    break
+        
+  else: 
+     print ("")
+
+
+"""atack, defence, base hp and level"""
+if crclass == "warrior" :
+  cratk = 2
+  crdef = 2
+  crhp = 14
+  crlevel = 1
+
+
+print ("Well then, lets begin:")
+print ("")
+
+print ("Upon waking up, you find that ")
