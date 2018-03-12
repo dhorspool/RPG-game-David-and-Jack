@@ -101,6 +101,16 @@ if crclass == "warrior" :
   crstats.append(crlevel)
   print (crstats[0])
   
+elif crclass == "mage":
+  cratk = 4
+  crdef = 0
+  crhp = 12
+  crlevel = 1
+  crstats.append(crname)
+  crstats.append(cratk)
+  crstats.append(crdef)
+  crstats.append(crhp)
+  crstats.append(crlevel)
 
 print ("Well then, lets begin:")
 print ("")
