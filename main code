@@ -8,12 +8,7 @@ badans = True
 understood=True
 crstats = []
 
-for row in fitxer:
-  enemiename=row[0]
-  enemieattack=row[1]
-  enemidefense=row[2]
-  enemiehp=row[3]
-  print 
+  
   
 enemiestats = []
 
@@ -32,7 +27,7 @@ enemie=[slimestats,batstats,ratstats]
 slime=enemie[0]
 bat=enemie[1]
 rat=enemie[2]
-print (rat)
+
   
 print ("Hello Adventurer, What is your Name?")
 crname = str(input(""))
@@ -67,11 +62,9 @@ print ("")
 print ("You awake in the land of Russia, a magical place where dreams come true, and magic and animals roam the land. You are a :")
 print ("")
 warrior = "Warrior, with 2 ATK, 2 DEF, and 16 HP"
-""" The only funcional class for now os the warrior, lets get 1 class wprking before we add the rest
-print ("Mage, 4 ATK, 0 DEF, and 12 HP")
-print ("Rouge, 3 ATK, 1 DEF, and 14 HP")
-class = str(input("So, What are you?"))
-"""
+mage = "Mage, 4 ATK, 0 DEF, and 12 HP"
+rouge = "Rouge, 3 ATK, 1 DEF, and 14 HP"
+
 crclass = ("")
 while not crclass == "warrior" or not crclass == "mage" or not crclass == "rouge":
   if crclass == "warrior" or crclass=="mage" or crclass == "rouge":
@@ -83,6 +76,8 @@ while not crclass == "warrior" or not crclass == "mage" or not crclass == "rouge
   print ("Please choose a correct class name")
   print ("")
   print (warrior)
+  print (mage)
+  print (rouge)
   crclass = str(input("So, What are you?"))
   
   
@@ -92,6 +87,17 @@ while not crclass == "warrior" or not crclass == "mage" or not crclass == "rouge
 if crclass == "warrior" :
   cratk = 2
   crdef = 2
+  crhp = 16
+  crlevel = 1
+  crstats.append(crname)
+  crstats.append(cratk)
+  crstats.append(crdef)
+  crstats.append(crhp)
+  crstats.append(crlevel)
+  
+elif crclass == "rouge":
+  cratk = 3
+  crdef = 1
   crhp = 14
   crlevel = 1
   crstats.append(crname)
@@ -99,7 +105,7 @@ if crclass == "warrior" :
   crstats.append(crdef)
   crstats.append(crhp)
   crstats.append(crlevel)
-  print (crstats[0])
+
   
 elif crclass == "mage":
   cratk = 4
@@ -112,7 +118,7 @@ elif crclass == "mage":
   crstats.append(crhp)
   crstats.append(crlevel)
 
+  
+
 print ("Well then, lets begin:")
 print ("")
-
-
