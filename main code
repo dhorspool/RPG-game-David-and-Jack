@@ -8,8 +8,32 @@ badans = True
 understood=True
 crstats = []
 
+for row in fitxer:
+  enemiename=row[0]
+  enemieattack=row[1]
+  enemidefense=row[2]
+  enemiehp=row[3]
+  print 
+  
+enemiestats = []
 
+for row in fitxer:
+  enemiename=row[0]
+  enemieattack=row[1]
+  enemiedefense=row[2]
+  enemiehp=row[3]
+  enemies = row
+  enemiestats.append([row[0],int(row[1]),int(row[2]),int(row[3])])
 
+ratstats=enemiestats[2]
+slimestats=enemiestats[0]
+batstats=enemiestats[1]
+enemie=[slimestats,batstats,ratstats]
+slime=enemie[0]
+bat=enemie[1]
+rat=enemie[2]
+print (rat)
+  
 print ("Hello Adventurer, What is your Name?")
 crname = str(input(""))
 print ("%s, right? Not the name I would have chosen." %(crname,))
@@ -82,5 +106,3 @@ print ("Well then, lets begin:")
 print ("")
 
 
-
-print ("Upon waking up, you find a")
