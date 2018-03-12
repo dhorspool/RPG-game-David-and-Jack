@@ -6,6 +6,9 @@ fitxer = csv.reader(lect)
 inventory=[]
 badans = True
 understood=True
+crstats = []
+
+
 
 print ("Hello Adventurer, What is your Name?")
 crname = str(input(""))
@@ -40,7 +43,6 @@ print ("")
 print ("You awake in the land of Russia, a magical place where dreams come true, and magic and animals roam the land. You are a :")
 print ("")
 warrior = "Warrior, with 2 ATK, 2 DEF, and 16 HP"
-print (warrior)
 """ The only funcional class for now os the warrior, lets get 1 class wprking before we add the rest
 print ("Mage, 4 ATK, 0 DEF, and 12 HP")
 print ("Rouge, 3 ATK, 1 DEF, and 14 HP")
@@ -48,38 +50,37 @@ class = str(input("So, What are you?"))
 """
 crclass = ("")
 while not crclass == "warrior" or not crclass == "mage" or not crclass == "rouge":
-  print ("Please choose a correct class name")
-  print ("")
-  print (warrior)
-  crclass = str(input("So, What are you?"))
   if crclass == "warrior" or crclass=="mage" or crclass == "rouge":
     print ("Great!")
     break
         
   else: 
      print ("")
+  print ("Please choose a correct class name")
+  print ("")
+  print (warrior)
+  crclass = str(input("So, What are you?"))
+  
+  
 
+'''atack, defence, base hp and level'''
 
-"""atack, defence, base hp and level"""
 if crclass == "warrior" :
   cratk = 2
   crdef = 2
   crhp = 14
   crlevel = 1
-
+  crstats.append(crname)
+  crstats.append(cratk)
+  crstats.append(crdef)
+  crstats.append(crhp)
+  crstats.append(crlevel)
+  print (crstats[0])
+  
 
 print ("Well then, lets begin:")
 print ("")
 
-print ("Upon waking up, you find that ")
 
 
-
-for row in fitxer:
-  enemiename=row[0]
-  enemieattack=row[1]
-  enemidefense=row[2]
-  enemiehp=row[3]
-  print 
-  
-  
+print ("Upon waking up, you find a")
