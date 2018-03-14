@@ -5,6 +5,25 @@ def intro(charName):
   understood=True
   print ("%s, right? Not the name I would have chosen." %(colors.yellow(charName)))
   print ("")
+  
+  print ("anyways, are you a %s or a %s" % (colors.cyan("female"),(colors.cyan("male"))))
+  crgender = input("")
+  badans = True  
+  while badans:
+    if crgender == "male":
+      print((colors.cyan('Perfect!')))
+      break
+      
+    elif crgender == "female":
+      print (colors.magenta("Perfect!"))
+      break
+    else:
+      print("gender %s" %(colors.yellow("NOT FOUND!")))
+      print ("please write one of the %s:" %(colors.red("ABOVE")))
+    crgender=input("")
+      
+  
+  print ("")
   print ("Let me make some things clear Right off the bat:")
   print ("With the exception of Your Name, All words and commands amd etc will need to be clear: If you are inputting a number, make it just a number. If you are making an action, make it just one word, all lowercase. Is that clear ? :")
   print ("")
@@ -56,7 +75,7 @@ def chrType(dictChar):
     
   
   return crclass
-  
+
 def chosePath():
   print ("")
   print ("Well then, lets begin:")
@@ -67,6 +86,8 @@ def chosePath():
   print (colors.red("-Eden"))
   print ("")
   answer=input(colors.magenta("So where:"))
+  
+
   
   if answer == "forest":
     print(colors.yellow("very well young aprentice. so to pass, Master Elenoid (a wierd basard) offers you the way if you answer his riddle:"))
@@ -108,7 +129,7 @@ def chosePath():
     riddleans=input(colors.cyan("the riddle is: There was a plane crash and every single person died, who survived?:"))
     badans = True  
     while badans:
-      if riddleans == "married couples":
+      if riddleans == "married people":
         print("very well. you now have entered the %s." % (colors.red('EDEN')))
         break
       else:
@@ -120,4 +141,5 @@ def chosePath():
   
   else:
     print("You wrote it wrong")
+    
 
