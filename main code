@@ -2,6 +2,7 @@ import csv
 import random
 import texts
 import characters
+import colors
 from characters import charactDict
 
 def choseEnemy():
@@ -31,7 +32,9 @@ theEnemy = choseEnemy()
 print ("Hello Adventurer, What is your Name?")
 crname = input("")
 
+
 texts.intro(crname)
+
 
 crclass = texts.chrType(charactDict)
 
