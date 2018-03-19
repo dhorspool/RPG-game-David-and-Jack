@@ -1,55 +1,104 @@
-import csv
-import random
-import texts
-import characters
 import colors
-from characters import charactDict
-
-def choseEnemy():
-  enemiestats = {}
-
-  for row in fitxer:
-    enemiestats[row[0]] = {} 
-    enemiestats[row[0]]['atk']=row[1]
-    enemiestats[row[0]]['def']=row[2]
-    enemiestats[row[0]]['hp']=row[3]
-
-  enemies = list(enemiestats.keys())
-  random.shuffle(enemies)
-  enemyChosen = enemies[0]
-  enemy = characters.Character(enemiestats[enemyChosen], enemiestats[enemyChosen]['hp'], enemiestats[enemyChosen]['atk'], enemiestats[enemyChosen]['def'], 1 )
-  return enemy
-
-filename ="enemies.csv"
-lect = open(filename)
-fitxer = csv.reader(lect)
-inventory=[]
-
-badans = True
-
-theEnemy = choseEnemy()
-
-print ("Hello Adventurer, What is your Name?")
-crname = input("")
 
 
-texts.intro(crname)
-
-
-crclass = texts.chrType(charactDict)
-
-print ("Great!")
+def intro(charName):
+  understood=True
+  print ("%s, right? Not the name I would have chosen." %(colors.yellow(charName)))
+  print ("")
   
-'''atack, defence, base hp and level'''
+  print ("anyways, are you a %s or a %s" % (colors.cyan("female"),(colors.cyan("male"))))
+  crgender = input("")
+  badans = True  
+  while badans:
+    if crgender == "male":
+      print((colors.cyan('Perfect!')))
+      break
+      
+    elif crgender == "female":
+      print (colors.magenta("Perfect!"))
+      break
+    else:
+      print("gender %s" %(colors.yellow("NOT FOUND!")))
+      print ("please write one of the %s:" %(colors.red("ABOVE")))
+    crgender=input("")
+      
+  
+  print ("")
+  print ("Let me make some things clear Right off the bat:")
+  print ("With the exception of Your Name, All words and commands amd etc will need to be clear: If you are inputting a number, make it just a number. If you are making an action, make it just one word, all lowercase. Is that clear ? :")
+  print ("")
+  print(colors.cyan("Options: yes, no"))
+  
+  while understood:
+    ans = str(input(""))
+    if ans == "Yes":
+      print ("Repeat, in lowercase")
+    elif ans == "No":
+      print ("Repeat, in lowercase")
+    elif ans == "no":
+      print ("With the exception of Your Name, All words and commands amd etc will need to be clear: If you are inputting a number, make it just a number. If you are making an action, make it just one word, all lowercase. Is that clear ? ")
+      print ("")
+      print ("Options: yes, no")
+      
+    elif ans == "yes":
+      print ("Great! Now we can understand each other")
+      understood = False
+    else:
+      print ("Options:")
+      print ("yes")
+      print ("no")
+  
+  print ("Anyway, Lets get started:")
+  print ("")
+  print ("You awake in the land of Russia, a magical place where dreams come true, and magic and animals roam the land. You are a :")
+  print ("")
 
-if crclass == "warrior" :
-  crstats = characters.Warrior(crname)
-elif crclass == "mage":
-  crstats = characters.Mage(crname)
-elif crclass == 'rogue':
-  crstats = characters.Rogue(crname)
+def chrType(dictChar):
+  
+  def printChars():
+    print('{:^20}|{:^14s}|{:^14s}|{:^14s}|'.format(colors.yellow('TYPE'), colors.yellow('ATK'), colors.yellow('DEF'), colors.yellow('HP')))
+    for chrtype in dictChar.keys():
+      chrStats = dictChar[chrtype]
+      
+      print('{:^20}|{:^5d}|{:^5d}|{:^5d}|'.format(colors.cyan(chrtype), chrStats['atk'], chrStats['def'], chrStats['hp']))
+    print()
+    crclass = str(input("So, What are you?"))
+    return crclass
+  crclass = printChars()
+  typesCh = dictChar.keys()
+  while crclass not in typesCh:
+    print ("")
+    print ("Please choose a correct class name")
+    print ("")
+    crclass = printChars()
+    
+    
+  
+  return crclass
 
-print('Wellcome {} the {}'.format(crname, crclass.capitalize()))
-crstats.printStats()
+def chosePath():
+  print ("")
+  print ("Well then, lets begin:")
+  print ("You have three paths. Were do you wanna go?")
+  print ("")
+  print (colors.red("-Forest"))
+  print (colors.red("-Cave"))
+  print (colors.red("-Eden"))
+  print ("")
+  answer=input(colors.magenta("So where:"))
+  
 
-texts.chosePath()
+  
+  if answer == "forest":
+    import forest
+  elif answer == "cave":
+    import cave
+    
+  elif answer == "eden":
+    import eden  
+    
+  else:
+    print("You wrote it wrong")
+    
+
+  
