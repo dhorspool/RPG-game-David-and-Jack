@@ -41,11 +41,12 @@ class Character:
   def gainexp(self,expnum):
     self.exp = self.exp + expnum
     print ("You gained %s exp" % (expnum,))
-    levelup = self.level * 15
+    levelup = self.level * 11
     print ("Old level: %s " % (self.level,) )
     while self.exp >= levelup: 
       self.level = self.level + 1
       self.exp = self.exp - levelup
+      levelup = self.level * 11
     print ("Current level: %s " % (self.level,) )
     
 class Warrior(Character):
@@ -83,5 +84,7 @@ class Rogue(Character):
     self.defense = charactDict[pro]['def']
     self.level = 1
     self.exp = 0   
+    
+
     
 
