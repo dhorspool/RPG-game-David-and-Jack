@@ -19,7 +19,7 @@ def choseEnemy():
   enemies = list(enemiestats.keys())
   random.shuffle(enemies)
   enemyChosen = enemies[0]
-  enemy = Character(enemiestats[enemyChosen], enemiestats[enemyChosen]['hp'], enemiestats[enemyChosen]['atk'], enemiestats[enemyChosen]['def'], 1, 0)
+  enemy = Character(enemyChosen, enemiestats[enemyChosen]['hp'], enemiestats[enemyChosen]['atk'], enemiestats[enemyChosen]['def'], 1, 0)
   return enemy
 
 class Character:
@@ -83,5 +83,3 @@ class Rogue(Character):
     self.defense = charactDict[pro]['def']
     self.level = 1
     self.exp = 0   
-    
-
