@@ -15,6 +15,6 @@ def eden():
       print(" ")
       print(" ")
       riddleans=input(colors.cyan("the riddle is: There was a plane crash and every single person died, who survived?:"))
+  import encounter
       
 eden()
-
