@@ -21,11 +21,12 @@ def intro(charName):
       print("gender %s" %(colors.yellow("NOT FOUND!")))
       print ("please write one of the %s:" %(colors.red("ABOVE")))
     crgender=input("")
+   
       
-  
+
   print ("")
-  print ("Let me make some things clear Right off the bat:")
-  print ("With the exception of Your Name, All words and commands amd etc will need to be clear: If you are inputting a number, make it just a number. If you are making an action, make it just one word, all lowercase. Is that clear ? :")
+  print ("Let me make some things clear right off the bat:")
+  print ("With the exception of your name, all words and commands and etc will need to be clear: If you are inputting a number, make it just a number. If you are making an action, make it just one word, all lowercase. Is that clear ? :")
   print ("")
   print(colors.cyan("Options: yes, no"))
   
@@ -44,13 +45,14 @@ def intro(charName):
       print ("Great! Now we can understand each other")
       understood = False
     else:
-      print ("Options:")
-      print ("yes")
-      print ("no")
+      print ("Options: yes, no")
   
-  print ("Anyway, Lets get started:")
   print ("")
-  print ("You awake in the land of Russia, a magical place where dreams come true, and magic and animals roam the land. You are a :")
+  print ("It looks like you are finally awake. Not even the storm lat night could wake you. I heard them say we finally reached the new world. Quiet now, I hear the guards coming.")
+  print ("")
+  print ("You, come with us, we need to take your census")
+  print ("We don't have any records of you, so please tell us your occupation,and we will let you be on your way.")
+  print ("")
   print ("")
 
 def chrType(dictChar):
@@ -78,8 +80,11 @@ def chrType(dictChar):
 
 def chosePath():
   print ("")
-  print ("Well then, lets begin:")
-  print ("You have three paths. Were do you wanna go?")
+  print ("Well then, you are free to go. Let me give you some information:")
+  print ("")
+  print ("You have arrived at the new world, a strange new land which has recently been discovered, and has started to be colonized. Reports have been arriving that there are ruins and strange creatures out in the wild, which still largely remain unexplored. You have probably arrived as an adventurer, looking to search these parts. Anyway, off you go")
+  print ("")
+  print ("You arrive at a fork on the road, where a sign points to  three paths. Were do you wanna go?")
   print ("")
   print (colors.red("-Forest"))
   print (colors.red("-Cave"))
@@ -91,6 +96,7 @@ def chosePath():
   
   if answer == "forest":
     import forest
+    
   elif answer == "cave":
     import cave
     
